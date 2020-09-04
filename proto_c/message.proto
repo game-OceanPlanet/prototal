@@ -1,0 +1,96 @@
+syntax="proto3";
+package com.message;
+
+message MsgEnum {
+    enum MsgCode {
+        MSG_EMPTY = 0;
+        S_EXCEPTION_MSG = 900; // 异常消息
+
+        C_USER_LOGIN = 1001; // 登录
+        S_USER_LOGIN = 1002; // 登录成功
+        S_USER_LOGIN_BAN = 1003; // 被封禁提示
+        C_LOGIN_REGISTER = 1005; //注册
+        C_USER_LOGOUT = 1007; //登出
+        S_USER_LOGOUT = 1008;
+
+        C_USER_LOGIN_INIT_FINISH = 1009; // 登录注册完成请求 角色信息
+        S_USER_LOGIN_INIT_FINISH = 1010; // 登录注册完成请求 角色信息
+		
+        C_GET_PLAYER_INFO           = 1021;         //客户端 查看其它角色信息
+        S_GET_PLAYER_INFO           = 1022;
+        C_EDIT_PLAYER_NICKNAME      = 1023;         //修改角色昵称
+        S_EDIT_PLAYER_NICKNAME      = 1024;
+
+        S_RECHARGE_RTN_PUSH			= 1025;	// 推送封测期间充值后返还元宝的提示
+        C_RECHARGE_RTN_REWARD		= 1026; // 客户端手动领取封测期间充值的返还元宝的奖励
+        S_RECHARGE_RTN_REWARD		= 1027; // 手动领取封测期间充值的返还元宝的奖励
+
+        S_LOGIN_OFFLINE_HANGUP_PUSH		= 1028;	// 登录推送客户端玩家离线奖励数据操作
+        S_LOGIN_BACK_PACK_PUSH			= 1029;	// 登录推送客户端玩家的背包数据
+
+        C_GET_NICKNAME_INFO           = 1030;	// 客户端核查随机名字是否可以使用
+        S_GET_NICKNAME_INFO           = 1031;
+
+        C_SEND_SDK_DATA               = 1032;	// 客户端通知sdk上报数据操作
+        S_SEND_SDK_DATA               = 1033;
+
+
+		C_SYNC_LOAD_FINISH	= 2000; // 客户端通知服务器加载成功，服务器可以推送指令
+
+        S_SYN_PROPERTY = 2001; // 同步属性变化
+
+        C_SYNC_TIME = 2101; //同步时间
+        S_SYNC_TIME = 2102; //同步时间
+
+        //debug
+        C_DEBUG_COMMON = 3101; //debug
+        S_DEBUG_COMMON = 3102;
+
+        C_CHECK_CDK_INFO                = 6500;                //检查cdkey
+        S_CHECK_CDK_INFO                = 6501;
+        C_GET_CDK_REWARD                = 6502;                //获得cdkey奖励
+        S_GET_CDK_REWARD                = 6503;
+
+
+        //===============跨服协议id >= 100000 ===============================
+        CROSS_C_HEART_BEAT = 100001;        // 跨服服务器心跳
+        CROSS_S_HEART_BEAT = 100002;
+        CROSS_C_SERVER_REGISTER = 100003;        // 跨服服务器注册
+        CROSS_S_SERVER_REGISTER = 100004;
+		
+		CROSS_S_EXCEPTION_MSG = 100005;		//	跨服错误吗
+		CROSS_C_SERVER_PUSH = 100006;       // 跨服服务器注册成功推送消息
+        CROSS_S_SERVER_PUSH = 100007;
+        CROSS_C_HTTP_DATA = 100008;		// 坑爹的协议，由于oss不支持跨服的http服务，暂时由游戏服的http接收后发送跨服处理
+
+    }
+
+
+
+    enum ExceptionCode {
+        EXCEPTION_EMPTY = 0;
+        ERROR_INPUT_PARAMETER = 1001;
+        ERROR_INPUT_NUMBER = 1002;
+        NOT_ENOUGH_ITEM_GOODS = 1003;
+        BAG_ITEM_CAN_NOT_USE = 1004;
+        GOODS_NOT_EXIST = 1007;
+        ERROR_CONFIG = 1030; //配置出错
+        PLAYER_LEVEL_LIMITED = 1038; //角色等级不足
+        ROLE_NOT_FOUND 					= 1047; //角色不存在
+        MAIL_NOT_FOUND 					= 1048; //邮件不存在
+        MAIL_NO_ACCESSORY 				= 1049; //邮件无附件
+        MAIL_ACCESSORY_RECEIVED 		= 1050; //附件已领取
+        MAIL_DELETEFAILD_BYACCESSORY 	= 1051; //有附件删除失败
+        PLAYER_NOT_FOUND = 1052; //找不到角色
+		USERNAME_REPEATED = 1170; //用户名重复
+		NICKNAME_REPEATED = 1171; //角色名重复
+		CAN_NOT_USE_ILLEGAL_CHAR = 1172; //不能使用非法字符
+		CAN_NOT_USE_SENSITIVE_CHAR = 1173; //不能使用敏感字符
+
+        SIGN_DAY_LARGE = 1178; //签到天数大于开服天数
+        SIGN_DAY_NOT_ENOUGH  = 1179; //签到天数不足
+		PLAYER_NOT_EXIST = 1181;//玩家不存在
+	
+  }
+
+}
