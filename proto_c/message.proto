@@ -21,12 +21,6 @@ message MsgEnum {
         C_EDIT_PLAYER_NICKNAME      = 1023;         //修改角色昵称
         S_EDIT_PLAYER_NICKNAME      = 1024;
 
-        S_RECHARGE_RTN_PUSH			= 1025;	// 推送封测期间充值后返还元宝的提示
-        C_RECHARGE_RTN_REWARD		= 1026; // 客户端手动领取封测期间充值的返还元宝的奖励
-        S_RECHARGE_RTN_REWARD		= 1027; // 手动领取封测期间充值的返还元宝的奖励
-
-        S_LOGIN_OFFLINE_HANGUP_PUSH		= 1028;	// 登录推送客户端玩家离线奖励数据操作
-        S_LOGIN_BACK_PACK_PUSH			= 1029;	// 登录推送客户端玩家的背包数据
 
         C_GET_NICKNAME_INFO           = 1030;	// 客户端核查随机名字是否可以使用
         S_GET_NICKNAME_INFO           = 1031;
@@ -34,8 +28,13 @@ message MsgEnum {
         C_SEND_SDK_DATA               = 1032;	// 客户端通知sdk上报数据操作
         S_SEND_SDK_DATA               = 1033;
 
+        C_GET_FISH_INFO		= 1051; //获取我的鱼儿
+        S_GET_FISH_INFO		= 1052;
+        C_BUY_FISH		= 1053; //购买鱼儿
+        S_BUY_FISH		= 1054;
+        C_COMBINE_FISH		= 1055; //合并鱼儿
+        S_COMBINE_FISH		= 1056;
 
-		C_SYNC_LOAD_FINISH	= 2000; // 客户端通知服务器加载成功，服务器可以推送指令
 
         S_SYN_PROPERTY = 2001; // 同步属性变化
 
@@ -45,11 +44,6 @@ message MsgEnum {
         //debug
         C_DEBUG_COMMON = 3101; //debug
         S_DEBUG_COMMON = 3102;
-
-        C_CHECK_CDK_INFO                = 6500;                //检查cdkey
-        S_CHECK_CDK_INFO                = 6501;
-        C_GET_CDK_REWARD                = 6502;                //获得cdkey奖励
-        S_GET_CDK_REWARD                = 6503;
 
 
         //===============跨服协议id >= 100000 ===============================
