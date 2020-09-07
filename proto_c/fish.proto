@@ -63,6 +63,7 @@ message C_GET_MONEY_INFO {
 // 获取金币信息
 message S_GET_MONEY_INFO {
 	int64 money=3; //当前持有金币
+	int64 diamond=4; //当前持有u
 }
 
 
