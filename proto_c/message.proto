@@ -111,6 +111,10 @@ message MsgEnum {
 		NICKNAME_REPEATED = 1171; //角色名重复
 		CAN_NOT_USE_ILLEGAL_CHAR = 1172; //不能使用非法字符
 		CAN_NOT_USE_SENSITIVE_CHAR = 1173; //不能使用敏感字符
+		MOBILE_NOT_RIGHT_PHONE = 1174; //手机号码不正确
+		INVITE_CODE_IS_NULL = 1175; //邀请码不能为空
+		INVITE_CODE_NOT_FOUND = 1176; //邀请码不存在
+		MOBILE_HAS_REGISTER = 1177; //手机号码已经被注册
 
         SIGN_DAY_LARGE = 1178; //签到天数大于开服天数
         SIGN_DAY_NOT_ENOUGH  = 1179; //签到天数不足
